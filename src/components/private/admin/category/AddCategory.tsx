@@ -7,7 +7,7 @@ const AddCategory = () => {
   const { register, handleSubmit, reset } = useForm();
   const { mutate: createMutation } = useApiMutation(
     "post",
-    `/api/categories/category`
+    `/api/category/addCategory`
   );
   const onsubmit = (data: any) => {
     createMutation(data, {
@@ -21,7 +21,7 @@ const AddCategory = () => {
   return (
     <div className="flex w-full min-h-screen items-start justify-center px-4 py-10">
       <div className="bg-white w-full max-w-5xl p-6 sm:p-10 rounded-xl shadow border border-gray-200">
-        <h2 className="text-2xl font-bold text-center mb-8">Add Product</h2>
+        <h2 className="text-2xl font-bold text-center mb-8">Add Category</h2>
         <form onSubmit={handleSubmit(onsubmit)}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <FormInput

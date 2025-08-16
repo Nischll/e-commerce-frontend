@@ -31,7 +31,7 @@ const cartCount = cartItems.length;
 
   const { data: categories = [] } = useApiGet({
     queryKey: "category",
-    endpoint: `/api/categories/category`,
+    endpoint: `/api/category/category`,
   });
 
   const handleCategoryClick = (category: string) => {

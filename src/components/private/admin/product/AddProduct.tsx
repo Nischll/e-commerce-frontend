@@ -13,7 +13,7 @@ const AddProduct = () => {
     `/api/products/addProduct`
   );
   const { data: categories = [] } = useApiGet({
-    endpoint: `${apiUrl}/api/categories/category`,
+    endpoint: `${apiUrl}/api/category/category`,
     queryKey: "Categories",
   });
   const categoryOptions = categories.map((cat: any) => ({

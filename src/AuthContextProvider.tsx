@@ -31,7 +31,6 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [isAuthenticated, setAuthenticated] = useState(false);
   const [user, setUser] = useState<UserInfo | null>(null);
   const [initData, setInitData] = useState<UserDetails| null>(null);
-  console.log("authini",initData)
 
   // 🔍 Dynamically control when to fetch init data
   const { data: fetchedInitData } = useApiGet<UserDetails>({

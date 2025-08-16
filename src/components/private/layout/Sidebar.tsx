@@ -21,9 +21,10 @@ interface IAdminSidebarData {
 
 const adminSidebarData: IAdminSidebarData[] = [
 
-  { title: "AddProducts", path: "/admin/add-product", icon: <AiOutlineProduct />, id: 5 },
+  { title: "Add Products", path: "/admin/add-product", icon: <AiOutlineProduct />, id: 5 },
   { title: "Inventory", path: "/admin/products", icon: <MdInventory2 />, id: 6 },
   { title: "Orders", path: "/admin/orders", icon: <TbReportAnalytics />, id: 9 },
+  { title: "Category", path: "/admin/add-category", icon: <TbReportAnalytics />, id: 10 },
   
 ];
 

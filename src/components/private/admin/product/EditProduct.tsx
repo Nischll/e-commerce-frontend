@@ -20,7 +20,7 @@ const EditProduct = () => {
 
   const { data: categories = [] } = useApiGet({
     queryKey: "categories",
-    endpoint: "/api/categories/category",
+    endpoint: "/api/category/category",
   });
 
   useEffect(() => {
