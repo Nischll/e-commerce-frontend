@@ -119,6 +119,8 @@ const Register = () => {
                 type="text"
                 register={register}
                 error={errors.username?.message}
+                placeholder="enter username"
+                customClass="w-full border-gray-400"
               />
               <FormInput
                 labelText="Email"
@@ -128,6 +130,8 @@ const Register = () => {
                 type="text"
                 register={register}
                 error={errors.email?.message}
+                placeholder="enter email"
+                customClass="w-full border-gray-400"
               />
               <FormInput
                 labelText="Phone"
@@ -137,6 +141,8 @@ const Register = () => {
                 type="text"
                 register={register}
                 error={errors.phone?.message}
+                placeholder="enter phonenumber"
+                customClass="w-full border-gray-400"
               />
               <FormInput
                 labelText="Password"
@@ -146,6 +152,8 @@ const Register = () => {
                 type="password"
                 register={register}
                 error={errors.password?.message}
+                placeholder="enter password"
+                customClass="w-full border-gray-400"
               />
               <FormInput
                 labelText="Address"
@@ -155,6 +163,8 @@ const Register = () => {
                 type="text"
                 register={register}
                 error={errors.address?.message}
+                placeholder="enter address"
+                customClass="w-full border-gray-400"
               />
               {/* <FormInput
                 labelText="Confirm Password"

@@ -46,7 +46,7 @@ const Sidebar = () => {
               alt="Logo"
               className="h-10 w-10 object-cover rounded"
             />
-            <span className="text-xl font-semibold text-gray-800">Nepali Luga</span>
+            <span className="text-xl font-semibold text-gray-800">Luga Store</span>
           </Link>
         </div>
 

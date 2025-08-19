@@ -12,7 +12,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
         {/* Brand Info */}
         <div>
-          <h4 className="text-lg font-bold mb-3 text-indigo-700">Nepali Luga</h4>
+          <h4 className="text-lg font-bold mb-3 text-indigo-700">Luga Store</h4>
           <p className="text-sm text-gray-600">
             Your go-to clothing store designed for student life. Shop trendy, affordable, and quality fashion pieces that speak your style.
           </p>

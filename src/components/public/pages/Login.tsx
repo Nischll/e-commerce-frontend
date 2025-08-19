@@ -22,20 +22,19 @@ export interface formValues {
 }
 
 const Login = () => {
-
   // const { setAuthenticated } = useAuth();
   const navigate = useNavigate();
-  const { login, isAuthenticated, user } = useAuth(); // 👈 get values from context
+  const { login, isAuthenticated, user } = useAuth();
 
-useEffect(() => {
-  if (isAuthenticated && user) {
-    if (user.role === "Admin") {
-      navigate("/admin"); // 👈 go to admin dashboard
-    } else {
-      navigate("/"); // 👈 go to normal user homepage
+  useEffect(() => {
+    if (isAuthenticated && user) {
+      if (user.role === "Admin") {
+        navigate("/admin"); // 👈 go to admin dashboard
+      } else {
+        navigate("/"); // 👈 go to normal user homepage
+      }
     }
-  }
-}, [isAuthenticated, user?.role, user, navigate]);
+  }, [isAuthenticated, user?.role, user, navigate]);
 
   // const apiService = useApiRequest();
 
@@ -73,35 +72,34 @@ useEffect(() => {
   //   }
   // };
 
-const onSubmit = (data: formValues) => {
-  console.log(data)
-  mutate(data, {
-    onSuccess: (response) => {
-      const token = response.data.token;
+  const onSubmit = (data: formValues) => {
+    console.log(data);
+    mutate(data, {
+      onSuccess: (response) => {
+        const token = response.data.token;
 
-      // Decode the token immediately
-      const decoded: any = jwtDecode(token);
-      const role = decoded?.role;
-      console.log(role)
+        // Decode the token immediately
+        const decoded: any = jwtDecode(token);
+        const role = decoded?.role;
+        console.log(role);
 
-      // Set login (will set context state and persist token)
-      login(token);
+        // Set login (will set context state and persist token)
+        login(token);
 
-      toast.success(response?.data.message);
+        toast.success(response?.data.message);
 
-      // Navigate based on role immediately
-      // if (role === "Admin") {
-      //   navigate("/admin");
-      // } else {
-      //   navigate("/");
-      // }
-    },
-    onError: (response) => {
-      toast.error(response?.message);
-    },
-  });
-};
-
+        // Navigate based on role immediately
+        // if (role === "Admin") {
+        //   navigate("/admin");
+        // } else {
+        //   navigate("/");
+        // }
+      },
+      onError: (response) => {
+        toast.error(response?.message);
+      },
+    });
+  };
 
   const navigateToForgot = () => navigate("/forgot-password");
 
@@ -162,6 +160,7 @@ const onSubmit = (data: formValues) => {
                 }}
                 error={errors.email?.message}
                 customClass="w-full border-gray-400"
+                placeholder="enter email"
               />
               <FormInput
                 labelText="Password"
@@ -175,6 +174,7 @@ const onSubmit = (data: formValues) => {
                 }}
                 error={errors.password?.message}
                 customClass="w-full border-gray-400"
+                placeholder="enter password"
               />
               <div className="flex justify-end mt-1">
                 <a
