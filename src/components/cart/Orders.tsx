@@ -37,11 +37,11 @@ const Orders = () => {
   const handleCancelOrder = async(orderId: string) => {
     cancelOrder(`${orderId}/cancel`, {
       onSuccess: () => {
-        toast.success("Order cancelled successfully");
+        // toast.success("Order cancelled successfully");
         refetch();
       },
       onError: (error: any) => {
-        toast.error(error?.response?.data?.message || "Failed to cancel order");
+        console.log(error?.response?.data?.message || "Failed to cancel order");
       },
     });
   };

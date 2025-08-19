@@ -38,19 +38,19 @@ const Register = () => {
   const {
     register,
     handleSubmit,
-    setValue,
-    watch,
+    // setValue,
+    // watch,
     formState: { errors },
   } = useForm<RegisterFormValues>();
 
-  const { data: roles } = useApiGet<RolesResponse>({
-    endpoint: "/api/roles/role",
-    queryKey: "ROLES",
-  });
-  const roleOptions = roles?.roles.map((role) => ({
-    label: role.key,
-    value: role.value,
-  }));
+  // const { data: roles } = useApiGet<RolesResponse>({
+  //   endpoint: "/api/roles/role",
+  //   queryKey: "ROLES",
+  // });
+  // const roleOptions = roles?.roles.map((role) => ({
+  //   label: role.key,
+  //   value: role.value,
+  // }));
   // console.log(roles)
 
   // const selectedRole = watch("role");
@@ -59,14 +59,7 @@ const Register = () => {
 
   const onSubmit = async (data: RegisterFormValues) => {
     // console.log("Form Submitted", data);
-    createUser(data, {
-      onSuccess: (res) => {
-        toast.success(res?.data.message);
-      },
-      onError: (res) => {
-        toast.error(res?.message);
-      },
-    });
+    createUser(data);
   };
 
   return (

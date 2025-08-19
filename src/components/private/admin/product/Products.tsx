@@ -19,11 +19,11 @@ const Products = () => {
     if (confirm("Are you sure you want to delete this product?")) {
       deleteProduct(`/delete/${id}`, {
         onSuccess: (res) => {
-          toast.success(res.message);
+          // toast.success(res.message);
           refetch(); // refresh the list
         },
         onError: (err) => {
-          toast.error(err.message || "Failed to delete");
+          console.log(err.message || "Failed to delete");
         },
       });
     }

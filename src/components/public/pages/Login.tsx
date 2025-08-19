@@ -73,7 +73,6 @@ const Login = () => {
   // };
 
   const onSubmit = (data: formValues) => {
-    console.log(data);
     mutate(data, {
       onSuccess: (response) => {
         const token = response.data.token;
@@ -86,7 +85,7 @@ const Login = () => {
         // Set login (will set context state and persist token)
         login(token);
 
-        toast.success(response?.data.message);
+        // toast.success(response?.data.message);
 
         // Navigate based on role immediately
         // if (role === "Admin") {
@@ -96,7 +95,7 @@ const Login = () => {
         // }
       },
       onError: (response) => {
-        toast.error(response?.message);
+        console.log(response?.message);
       },
     });
   };

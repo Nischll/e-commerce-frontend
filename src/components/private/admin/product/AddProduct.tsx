@@ -29,10 +29,10 @@ const AddProduct = () => {
     createProduct(formData, {
       onSuccess: (res) => {
         reset()
-        toast.success(res?.data.message);
+        // toast.success(res?.data.message);
       },
       onError: (res) => {
-        toast.error(res?.message);
+        console.log(res?.message);
       },
     });
   };

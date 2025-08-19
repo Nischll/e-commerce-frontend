@@ -31,11 +31,11 @@ const OrderList = () => {
       { path: `/${orderId}/update-order-status`, body: { orderStatus: newStatus } },
       {
         onSuccess: () => {
-          toast.success("Order status updated");
+          // toast.success("Order status updated");
           refetch();
         },
         onError: (err) => {
-          toast.error(err?.message || "Failed to update status");
+          console.log(err?.message || "Failed to update status");
         },
       }
     );
@@ -46,11 +46,11 @@ const OrderList = () => {
       { path: `/${orderId}/update-payment-status`, body: { paymentStatus: newPaymentStatus } },
       {
         onSuccess: () => {
-          toast.success("Payment status updated");
+          // toast.success("Payment status updated");
           refetch();
         },
         onError: (err) => {
-          toast.error(err?.message || "Failed to update payment status");
+          console.log(err?.message || "Failed to update payment status");
         },
       }
     );

@@ -81,7 +81,7 @@ const CartPage = () => {
       items: cartItems.map((item) => ({
         productId: item._id,
         quantity: item.quantity,
-        size:item.size
+        size: item.size,
       })),
       deliveryInfo,
     };
@@ -91,12 +91,12 @@ const CartPage = () => {
         { ...payload, paymentMethod: "COD" },
         {
           onSuccess: () => {
-            toast.success("Order placed successfully");
+            // toast.success("Order placed successfully");
             setTimeout(clearCart, 3000);
             navigate("/");
           },
           onError: (err) => {
-            toast.error(err.message || "Failed to place order");
+            console.log(err.message || "Failed to place order");
           },
         }
       );
